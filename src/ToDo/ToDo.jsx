@@ -9,9 +9,14 @@ const ToDo = () => {
   const [clave, setClave] = useState(0)
 
 
-  const modTarea =  (indice, estado) => {
+  const modTarea =  (clave, estado) => {
+    console.log('modTarea:clave', clave)
+    console.log('modTarea:estado', estado)
     let auxTareas = todTareas.slice()
-    auxTareas[indice].estado = estado
+    const index = todTareas.findIndex(tarea => parseInt(tarea.clave) === parseInt(clave));
+    console.log('modTarea:index', index)
+    console.log('modTarea:auxTareas', auxTareas)
+    auxTareas[index].estado = estado
     setTodTareas(auxTareas)
     console.log('AuxTareas', auxTareas)
 }
@@ -19,6 +24,7 @@ const ToDo = () => {
 const borrarTarea =  (indice) => {
     const newTarea = todTareas.filter((item) => item.clave !== indice);
     setTodTareas(newTarea);
+    console.log('Borrar Tarea newTarea', newTarea)
 }
 
   const agregarTarea = (estado, tarea, descripcion) => {

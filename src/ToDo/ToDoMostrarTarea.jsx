@@ -1,4 +1,4 @@
-import React from 'react'
+                                                                                                                                                                                                                                                      import React from 'react'
 import { FcFullTrash } from "react-icons/fc";
 import './ToDoMostrarTarea.css'
 
@@ -9,6 +9,7 @@ const ToDoMostrarTarea = (props) => {
     const handleCheckbox = (e) => {
         // e.preventDefault();
         const {id, checked} = e.target
+        console.log('id', id)
         console.log('checked', checked)
         modTarea(id, checked)
         
@@ -34,8 +35,8 @@ const ToDoMostrarTarea = (props) => {
                     onChange={handleCheckbox}
                     type="checkbox"
                     />
-                    <span className="strikethrough">{unaTarea.tarea}</span>
-                    <span className="strikethrough">{unaTarea.descripcion}</span>
+                    <span className={`${unaTarea.estado ? "tachado" : ""}`}>{unaTarea.tarea}</span>
+                    <span className={`${unaTarea.estado ? "tachado" : ""}`}>{unaTarea.descripcion}</span>
                     <button onClick={() => handleBorrar(unaTarea.clave)}><FcFullTrash /></button>
                 </li>
                 )
