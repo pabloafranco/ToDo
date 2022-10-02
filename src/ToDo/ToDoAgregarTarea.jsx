@@ -1,7 +1,11 @@
 import React, {useState} from 'react'
+import styles from './ToDoAgregarTarea.modules.css'
 
 const ToDoAgregarTarea = ({agregarTarea}) => {
     // console.log('Agregar Tarea: ', agregarTarea)
+
+    console.log(styles["tarea"])
+
     const [form, setForm]= useState({
         estado: false,
         tarea: '',
@@ -25,11 +29,13 @@ const handleSubmit = (e) => {
 }
     
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="box" onSubmit={handleSubmit}>
     <div>
-        <input type="text" name="tarea"  onChange={handleChange}/>
-        <input type="text" name="descripcion"  onChange={handleChange}/>
-        <button type="submit">Agregar</button>
+        <h3>Nueva tarea</h3>
+        <input className="texto" type="text" name="tarea" placeholder='Tarea' value={form.tarea} onChange={handleChange}/>
+        <input className="texto" type="text" name="descripcion" placeholder='Descripción' onChange={handleChange}/>
+        <button className="btn" type="submit">Agregar</button>
+        <h6 className="tarea">* Completa los campos para agregar una nueva tarea</h6>
     </div>
     </form>
   )

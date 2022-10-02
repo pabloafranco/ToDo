@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import ToDoAgregarTarea from './ToDoAgregarTarea'
 import ToDoMostrarTarea from './ToDoMostrarTarea'
+import { FaTasks} from "react-icons/fa";
+import './ToDo.modules.css'
 
 const ToDo = () => {
   const [todTareas, setTodTareas] = useState([])
@@ -16,9 +18,7 @@ const ToDo = () => {
 
 const borrarTarea =  (indice) => {
     const newTarea = todTareas.filter((item) => item.clave !== indice);
-
     setTodTareas(newTarea);
-    
 }
 
   const agregarTarea = (estado, tarea, descripcion) => {
@@ -35,11 +35,11 @@ const borrarTarea =  (indice) => {
     console.log(auxTareas)
 }
  
- 
+
  
   return (
-    <div>
-        <h1>ToDo List App </h1>
+    <div className = "box">
+        <h1>ToDo List App  <FaTasks /></h1>
         <ToDoAgregarTarea agregarTarea={agregarTarea} />
         <ToDoMostrarTarea todTareas={todTareas} modTarea={modTarea} borrarTarea={borrarTarea} />
 

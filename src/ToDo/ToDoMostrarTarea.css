@@ -3,4 +3,47 @@
 }
 
 
-:checked + * { text-decoration: strikethrough; }
+input[type=checkbox]:checked + span.strikethrough, input[type=checkbox]:checked + span.strikethrough + span.strikethrough   {
+    text-decoration:line-through;
+ }
+
+ ul {
+    PADDING-RIGHT: 0px;
+    PADDING-LEFT: 0px;
+    FLOAT: left;
+    PADDING-BOTTOM: 0px;
+    MARGIN: 5px 0px;
+    WIDTH: 100%;
+    PADDING-TOP: 0px;
+    LIST-STYLE-TYPE: none;  
+    text-align: left;
+
+  }
+
+
+li {
+font: arial;
+font-size: small;
+PADDING-RIGHT: 2px;
+PADDING-LEFT: 2px;
+FLOAT: left;
+WIDTH: 90%;
+PADDING-TOP: 2px;
+text-align: left;
+background-color: beige;
+}
+
+span {
+    PADDING-RIGHT: 20px;
+    PADDING-LEFT: 20px;
+    PADDING-TOP: 2px;
+    width: 150px;
+    display: block;
+    float: left;
+    }
+    
+.check {
+    margin-left: 0px;
+    text-align: left;
+    float: left;
+}    

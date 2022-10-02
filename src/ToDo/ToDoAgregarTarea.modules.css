@@ -1,0 +1,31 @@
+.tarea {
+    margin-top: 0px;
+    padding-top: 10px;
+    margin-left: 0px;
+    color: green;
+}
+
+  
+.box {
+    width: 500px;
+    height: 100px;
+    margin: 0 auto;
+    background-color: gray;
+  }
+
+.texto {
+    border-radius: 5px;
+}
+
+.btn {
+    background: #94ebad;
+    -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  text-shadow: 3px 2px 1px #9daef5;
+  -webkit-box-shadow: 6px 5px 24px #666666;
+  -moz-box-shadow: 6px 5px 24px #666666;
+  box-shadow: 6px 5px 24px #666666;
+}
+
+

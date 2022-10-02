@@ -25,17 +25,17 @@ const ToDoMostrarTarea = (props) => {
     <section>
         { 
         <ul>
-            <h2>Lista de Tareas</h2>
+            <h2>Lista de Tareas  </h2>
              { todTareas.map((unaTarea, index)=> (
                 <li key={unaTarea.clave}>
-                    <input
+                    <input className="check"
                     checked={unaTarea.estado}
                     id={unaTarea.clave}
                     onChange={handleCheckbox}
                     type="checkbox"
                     />
-                    <span className={`${unaTarea.estado ? "tachado" : ""}`}>{unaTarea.tarea}</span>
-                    <span className={`${unaTarea.estado ? "tachado" : ""}`}>{unaTarea.descripcion}</span>
+                    <span className="strikethrough">{unaTarea.tarea}</span>
+                    <span className="strikethrough">{unaTarea.descripcion}</span>
                     <button onClick={() => handleBorrar(unaTarea.clave)}><FcFullTrash /></button>
                 </li>
                 )
