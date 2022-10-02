@@ -25,15 +25,16 @@ const handleChange = (e) => {
 
 const handleSubmit = (e) => {
     e.preventDefault();
-    agregarTarea(false, form.tarea, form.descripcion )        
+    agregarTarea(false, form.tarea, form.descripcion )   ;
+    e.target.reset()
 }
     
   return (
-    <form className="box" onSubmit={handleSubmit}>
+    <form id="formulario" className="box" onSubmit={handleSubmit}>
     <div>
         <h3>Nueva tarea</h3>
-        <input className="texto" type="text" name="tarea" placeholder='Tarea' value={form.tarea} onChange={handleChange}/>
-        <input className="texto" type="text" name="descripcion" placeholder='Descripción' onChange={handleChange}/>
+        <input className="texto" type="text" name="tarea" placeholder='Tarea' onChange={handleChange} required/>
+        <input className="texto" type="text" name="descripcion" placeholder='Descripción' onChange={handleChange} required/>
         <button className="btn" type="submit">Agregar</button>
         <h6 className="tarea">* Completa los campos para agregar una nueva tarea</h6>
     </div>
