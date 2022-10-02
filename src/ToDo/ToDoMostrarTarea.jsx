@@ -29,20 +29,21 @@ const ToDoMostrarTarea = (props) => {
             <h2>Lista de Tareas  </h2>
              { todTareas.map((unaTarea, index)=> (
                 <li key={unaTarea.clave}>
-                    <input className="check"
+                    <input className="tabla__checkbox"
                     checked={unaTarea.estado}
                     id={unaTarea.clave}
                     onChange={handleCheckbox}
                     type="checkbox"
                     />
-                    <span className={`${unaTarea.estado ? "tachado" : ""}`}>{unaTarea.tarea}</span>
-                    <span className={`${unaTarea.estado ? "tachado" : ""}`}>{unaTarea.descripcion}</span>
+                    <span>{unaTarea.tarea}</span>
+                    <span>{unaTarea.descripcion}</span>
                     <button onClick={() => handleBorrar(unaTarea.clave)}><FcFullTrash /></button>
                 </li>
                 )
             )
         }
         </ul>
+        /* className={`${unaTarea.estado ? "tachado" : ""}`}  */
     }
     </section>
   )

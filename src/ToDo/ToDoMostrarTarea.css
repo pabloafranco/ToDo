@@ -1,11 +1,4 @@
-.tachado {
-    text-decoration: line-through;
-}
 
-
-input[type=checkbox]:checked + span.strikethrough, input[type=checkbox]:checked + span.strikethrough + span.strikethrough   {
-    text-decoration:line-through;
- }
 
  ul {
     PADDING-RIGHT: 0px;
@@ -42,8 +35,13 @@ span {
     float: left;
     }
     
-.check {
+.tabla__checkbox {
     margin-left: 0px;
     text-align: left;
     float: left;
-}    
+
+
+}   
+
+.tabla__checkbox:checked ~ span { text-decoration: line-through; }
+

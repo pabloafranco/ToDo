@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
-import styles from './ToDoAgregarTarea.modules.css'
+import './ToDoAgregarTarea.modules.css'
 
 const ToDoAgregarTarea = ({agregarTarea}) => {
     // console.log('Agregar Tarea: ', agregarTarea)
 
-    console.log(styles["tarea"])
+    // console.log(styles["tarea"])
 
     const [form, setForm]= useState({
         estado: false,

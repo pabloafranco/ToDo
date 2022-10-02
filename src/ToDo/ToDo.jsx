@@ -30,18 +30,15 @@ const borrarTarea =  (indice) => {
   const agregarTarea = (estado, tarea, descripcion) => {
     setClave(prev => prev + 1)
 
-    let auxTareas = todTareas.slice()
-    auxTareas.push({
-        clave: clave,
-        estado: estado,
-        tarea: tarea,
-        descripcion: descripcion
-    })
-    setTodTareas(auxTareas)
-    console.log(auxTareas)
+    setTodTareas((prev) => [...prev,  {
+     clave: clave,
+     estado: estado,
+     tarea: tarea,
+     descripcion: descripcion
+    }])     
+
 }
  
-
  
   return (
     <div className = "box">
