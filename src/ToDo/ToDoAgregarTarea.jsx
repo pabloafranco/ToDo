@@ -1,36 +1,13 @@
 import React, {useState} from 'react'
+import useForm from '../hooks/useForm'
 import './ToDoAgregarTarea.modules.css'
 
 const ToDoAgregarTarea = ({agregarTarea}) => {
     // console.log('Agregar Tarea: ', agregarTarea)
-
-    // console.log(styles["tarea"])
-
-    const [form, setForm]= useState({
-        estado: false,
-        tarea: '',
-        descripcion: ''
-    })
-    
-const handleChange = (e) => {
-    const {name, value} = e.target
-
-    setForm(
-        {...form,
-        [name]: value
-    });
-    
-}
-
-
-const handleSubmit = (e) => {
-    e.preventDefault();
-    agregarTarea(false, form.tarea, form.descripcion )   ;
-    e.target.reset()
-}
+  const {Form, handleChange, handleSubmit} = useForm
     
   return (
-    <form id="formulario" className="box" onSubmit={handleSubmit}>
+    <form id="formulario" className="box" onSubmit={()=>handleSubmit()}>
     <div>
         <h3>Nueva tarea</h3>
         <input className="texto" type="text" name="tarea" placeholder='Tarea' onChange={handleChange} required/>
@@ -41,8 +18,5 @@ const handleSubmit = (e) => {
     </form>
   )
 }
-
-
-
 
 export default ToDoAgregarTarea

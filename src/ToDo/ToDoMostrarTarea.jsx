@@ -1,26 +1,17 @@
                                                                                                                                                                                                                                                       import React from 'react'
 import { FcFullTrash } from "react-icons/fc";
+import useForm from '../hooks/useForm';
 import './ToDoMostrarTarea.css'
 
 const ToDoMostrarTarea = (props) => {
   
-    const {todTareas, modTarea, borrarTarea} =  props
-    
-    const handleCheckbox = (e) => {
-        // e.preventDefault();
-        const {id, checked} = e.target
-        console.log('id', id)
-        console.log('checked', checked)
-        modTarea(id, checked)
-        
-    }
+  const {todTareas, handleCheckbox, handleBorrar} = props
 
-    const handleBorrar = (clave) => {
-        // e.preventDefault();
-        console.log('clave', clave)
-        borrarTarea(clave)
-        
-    }
+  console.log('mostrarTareas: ', todTareas)
+  if (todTareas === undefined) {
+    return
+  }
+
 
   return (
     <section>
@@ -30,9 +21,9 @@ const ToDoMostrarTarea = (props) => {
              { todTareas.map((unaTarea, index)=> (
                 <li key={unaTarea.clave}>
                     <input className="tabla__checkbox"
+                    onChange={() => handleCheckbox(unaTarea.clave)}
                     checked={unaTarea.estado}
                     id={unaTarea.clave}
-                    onChange={handleCheckbox}
                     type="checkbox"
                     />
                     <span>{unaTarea.tarea}</span>
